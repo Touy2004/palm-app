@@ -7,6 +7,22 @@ All requests are made to the base URL: `https://api.phoudthasone.com/api/v1`
 
 ---
 
+## Standard Error Format
+Whenever an API request fails (e.g., 400 Bad Request, 401 Unauthorized, 404 Not Found), the backend will always return a predictable JSON structure. 
+
+**Important:** The `message` field is designed to be highly user-friendly and can be directly displayed to the user in a UI pop-up or SnackBar. Technical database errors are hidden from the frontend.
+
+**Example Error Response:**
+```json
+{
+  "code": 400,
+  "status": "Bad Request",
+  "message": "Your phone number or password is incorrect."
+}
+```
+
+---
+
 ## 1. Authentication (Logging In & Registering)
 *These routes handle getting users into the app and keeping their session active.*
 
